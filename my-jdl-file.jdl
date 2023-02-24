@@ -3,6 +3,10 @@ entity Region {
 	regionName String
 }
 
+entity RegionNew {
+	regionName String
+}
+
 entity Country {
 	countryName String
 }

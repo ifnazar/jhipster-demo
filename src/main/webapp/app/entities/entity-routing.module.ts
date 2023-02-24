@@ -44,6 +44,11 @@ import { RouterModule } from '@angular/router';
         data: { pageTitle: 'mydatabaseApp.location.home.title' },
         loadChildren: () => import('./location/location.module').then(m => m.LocationModule),
       },
+      {
+        path: 'region-new',
+        data: { pageTitle: 'mydatabaseApp.regionNew.home.title' },
+        loadChildren: () => import('./region-new/region-new.module').then(m => m.RegionNewModule),
+      },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
   ],

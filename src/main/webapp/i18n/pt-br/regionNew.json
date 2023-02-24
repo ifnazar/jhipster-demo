@@ -1,0 +1,24 @@
+{
+  "mydatabaseApp": {
+    "regionNew": {
+      "home": {
+        "title": "Region News",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Region New",
+        "createOrEditLabel": "Criar ou editar Region New",
+        "notFound": "Nenhum Region New encontrado"
+      },
+      "created": "Um novo Region New foi criado com o identificador {{ param }}",
+      "updated": "Um Region New foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Region New foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Region New {{ id }}?"
+      },
+      "detail": {
+        "title": "Region New"
+      },
+      "id": "ID",
+      "regionName": "Region Name"
+    }
+  }
+}

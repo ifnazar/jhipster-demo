@@ -25,6 +25,7 @@
     <include file="config/liquibase/changelog/20230224130158_added_entity_Department.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20230224130159_added_entity_JobHistory.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20230224130200_added_entity_Location.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230224130704_added_entity_RegionNew.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20230224130154_added_entity_constraints_Country.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20230224130155_added_entity_constraints_Job.xml" relativeToChangelogFile="false"/>
