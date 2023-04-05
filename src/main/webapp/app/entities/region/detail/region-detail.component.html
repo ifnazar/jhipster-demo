@@ -18,6 +18,10 @@
         <dd>
           <span>{{ region.regionName }}</span>
         </dd>
+        <dt><span jhiTranslate="mydatabaseApp.region.description">Description</span></dt>
+        <dd>
+          <span>{{ region.description }}</span>
+        </dd>
       </dl>
 
       <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

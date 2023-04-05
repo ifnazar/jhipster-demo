@@ -21,6 +21,7 @@ describe('Region Form Service', () => {
           expect.objectContaining({
             id: expect.any(Object),
             regionName: expect.any(Object),
+            description: expect.any(Object),
           })
         );
       });
@@ -32,6 +33,7 @@ describe('Region Form Service', () => {
           expect.objectContaining({
             id: expect.any(Object),
             regionName: expect.any(Object),
+            description: expect.any(Object),
           })
         );
       });

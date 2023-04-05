@@ -47,6 +47,9 @@ public class RegionServiceImpl implements RegionService {
                 if (region.getRegionName() != null) {
                     existingRegion.setRegionName(region.getRegionName());
                 }
+                if (region.getDescription() != null) {
+                    existingRegion.setDescription(region.getDescription());
+                }
 
                 return existingRegion;
             })

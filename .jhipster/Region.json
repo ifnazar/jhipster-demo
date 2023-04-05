@@ -8,6 +8,10 @@
     {
       "fieldName": "regionName",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
     }
   ],
   "fluentMethods": true,

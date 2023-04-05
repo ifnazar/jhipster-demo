@@ -1,6 +1,7 @@
 
 entity Region {
 	regionName String
+	description String
 }
 
 entity RegionNew {

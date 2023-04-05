@@ -32,6 +32,9 @@ class RegionResourceIT {
     private static final String DEFAULT_REGION_NAME = "AAAAAAAAAA";
     private static final String UPDATED_REGION_NAME = "BBBBBBBBBB";
 
+    private static final String DEFAULT_DESCRIPTION = "AAAAAAAAAA";
+    private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
+
     private static final String ENTITY_API_URL = "/api/regions";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -56,7 +59,7 @@ class RegionResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Region createEntity(EntityManager em) {
-        Region region = new Region().regionName(DEFAULT_REGION_NAME);
+        Region region = new Region().regionName(DEFAULT_REGION_NAME).description(DEFAULT_DESCRIPTION);
         return region;
     }
 
@@ -67,7 +70,7 @@ class RegionResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Region createUpdatedEntity(EntityManager em) {
-        Region region = new Region().regionName(UPDATED_REGION_NAME);
+        Region region = new Region().regionName(UPDATED_REGION_NAME).description(UPDATED_DESCRIPTION);
         return region;
     }
 
@@ -90,6 +93,7 @@ class RegionResourceIT {
         assertThat(regionList).hasSize(databaseSizeBeforeCreate + 1);
         Region testRegion = regionList.get(regionList.size() - 1);
         assertThat(testRegion.getRegionName()).isEqualTo(DEFAULT_REGION_NAME);
+        assertThat(testRegion.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
     }
 
     @Test
@@ -122,7 +126,8 @@ class RegionResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(region.getId().intValue())))
-            .andExpect(jsonPath("$.[*].regionName").value(hasItem(DEFAULT_REGION_NAME)));
+            .andExpect(jsonPath("$.[*].regionName").value(hasItem(DEFAULT_REGION_NAME)))
+            .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION)));
     }
 
     @Test
@@ -137,7 +142,8 @@ class RegionResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(region.getId().intValue()))
-            .andExpect(jsonPath("$.regionName").value(DEFAULT_REGION_NAME));
+            .andExpect(jsonPath("$.regionName").value(DEFAULT_REGION_NAME))
+            .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION));
     }
 
     @Test
@@ -159,7 +165,7 @@ class RegionResourceIT {
         Region updatedRegion = regionRepository.findById(region.getId()).get();
         // Disconnect from session so that the updates on updatedRegion are not directly saved in db
         em.detach(updatedRegion);
-        updatedRegion.regionName(UPDATED_REGION_NAME);
+        updatedRegion.regionName(UPDATED_REGION_NAME).description(UPDATED_DESCRIPTION);
 
         restRegionMockMvc
             .perform(
@@ -174,6 +180,7 @@ class RegionResourceIT {
         assertThat(regionList).hasSize(databaseSizeBeforeUpdate);
         Region testRegion = regionList.get(regionList.size() - 1);
         assertThat(testRegion.getRegionName()).isEqualTo(UPDATED_REGION_NAME);
+        assertThat(testRegion.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
     }
 
     @Test
@@ -259,6 +266,7 @@ class RegionResourceIT {
         assertThat(regionList).hasSize(databaseSizeBeforeUpdate);
         Region testRegion = regionList.get(regionList.size() - 1);
         assertThat(testRegion.getRegionName()).isEqualTo(UPDATED_REGION_NAME);
+        assertThat(testRegion.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
     }
 
     @Test
@@ -273,7 +281,7 @@ class RegionResourceIT {
         Region partialUpdatedRegion = new Region();
         partialUpdatedRegion.setId(region.getId());
 
-        partialUpdatedRegion.regionName(UPDATED_REGION_NAME);
+        partialUpdatedRegion.regionName(UPDATED_REGION_NAME).description(UPDATED_DESCRIPTION);
 
         restRegionMockMvc
             .perform(
@@ -288,6 +296,7 @@ class RegionResourceIT {
         assertThat(regionList).hasSize(databaseSizeBeforeUpdate);
         Region testRegion = regionList.get(regionList.size() - 1);
         assertThat(testRegion.getRegionName()).isEqualTo(UPDATED_REGION_NAME);
+        assertThat(testRegion.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
     }
 
     @Test

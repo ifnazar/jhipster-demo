@@ -18,7 +18,8 @@
         "title": "Region"
       },
       "id": "ID",
-      "regionName": "Region Name"
+      "regionName": "Region Name",
+      "description": "Description"
     }
   }
 }

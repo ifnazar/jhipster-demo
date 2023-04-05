@@ -24,6 +24,9 @@ public class Region implements Serializable {
     @Column(name = "region_name")
     private String regionName;
 
+    @Column(name = "description")
+    private String description;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
     public Long getId() {
@@ -52,6 +55,19 @@ public class Region implements Serializable {
         this.regionName = regionName;
     }
 
+    public String getDescription() {
+        return this.description;
+    }
+
+    public Region description(String description) {
+        this.setDescription(description);
+        return this;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -77,6 +93,7 @@ public class Region implements Serializable {
         return "Region{" +
             "id=" + getId() +
             ", regionName='" + getRegionName() + "'" +
+            ", description='" + getDescription() + "'" +
             "}";
     }
 }

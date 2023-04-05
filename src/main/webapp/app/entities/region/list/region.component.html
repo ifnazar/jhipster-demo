@@ -44,6 +44,12 @@
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
+          <th scope="col" jhiSortBy="description">
+            <div class="d-flex">
+              <span jhiTranslate="mydatabaseApp.region.description">Description</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
           <th scope="col"></th>
         </tr>
       </thead>
@@ -53,6 +59,7 @@
             <a [routerLink]="['/region', region.id, 'view']">{{ region.id }}</a>
           </td>
           <td>{{ region.regionName }}</td>
+          <td>{{ region.description }}</td>
           <td class="text-end">
             <div class="btn-group">
               <button type="submit" [routerLink]="['/region', region.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">

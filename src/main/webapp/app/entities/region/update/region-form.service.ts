@@ -19,6 +19,7 @@ type RegionFormDefaults = Pick<NewRegion, 'id'>;
 type RegionFormGroupContent = {
   id: FormControl<IRegion['id'] | NewRegion['id']>;
   regionName: FormControl<IRegion['regionName']>;
+  description: FormControl<IRegion['description']>;
 };
 
 export type RegionFormGroup = FormGroup<RegionFormGroupContent>;
@@ -39,6 +40,7 @@ export class RegionFormService {
         }
       ),
       regionName: new FormControl(regionRawValue.regionName),
+      description: new FormControl(regionRawValue.description),
     });
   }
 

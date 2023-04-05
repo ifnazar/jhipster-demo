@@ -5,13 +5,15 @@ export const sampleWithRequiredData: IRegion = {
 };
 
 export const sampleWithPartialData: IRegion = {
-  id: 78962,
-  regionName: 'Car',
+  id: 15979,
+  regionName: 'Practical',
+  description: 'Cotton 1080p',
 };
 
 export const sampleWithFullData: IRegion = {
-  id: 18782,
-  regionName: 'Cotton 1080p',
+  id: 74085,
+  regionName: 'Specialist robust deposit',
+  description: 'Missouri',
 };
 
 export const sampleWithNewData: NewRegion = {
